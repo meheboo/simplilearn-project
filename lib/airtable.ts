@@ -4,4 +4,4 @@ const base = new Airtable({
   apiKey: process.env.AIRTABLE_API_KEY,
 }).base(process.env.AIRTABLE_BASE_ID!)
 
-export const rsvpTable = base(process.env.AIRTABLE_TABLE_NAME!)
+export const rsdvTable = base(process.env.AIRTABLE_RSDV_TABLE!)

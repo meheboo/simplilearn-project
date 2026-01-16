@@ -1,22 +1,31 @@
+// 'use server'
+ 
+// export async function submitRSDV(formData: FormData): Promise<void> {
+//   const { rsdvTable } = await import('@/lib/airtable') // lazy import
+//   const email = formData.get('email') as string
+ 
+//   if (!email) throw new Error('Email is required')
+ 
+//   await rsdvTable.create([{ fields: { Email: email } }])
+// }
+
+
+
 'use server'
 
-import { rsvpTable } from '@/lib/airtable'
+export async function submitRSDV(formData: FormData) {
+  try {
+    const { rsdvTable } = await import('@/lib/airtable')
+    const email = formData.get('email') as string
 
-export async function submitRSVP(formData: FormData): Promise<void> {
-  const email = formData.get('email') as string
+    if (!email) {
+      return { ok: false, message: 'Email is required' }
+    }
 
-  if (!email) {
-    // You can throw an error, which Next.js will handle
-    throw new Error('Email is required')
+    await rsdvTable.create([{ fields: { email: email } }])
+
+    return { ok: true }
+  } catch (err: any) {
+    return { ok: false, message: err.message || 'Something went wrong' }
   }
-
-  await rsvpTable.create([
-    {
-      fields: {
-        Email: email,
-      },
-    },
-  ])
-
-  // Do NOT return anything
 }

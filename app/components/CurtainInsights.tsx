@@ -1,5 +1,5 @@
 import React from 'react'
-import { submitRSVP } from '../actions/submit-rsvp'
+import { submitRSDV } from '../actions/submit-rsvp'
 
 const CurtainInsights = () => {
   const benefits = [
@@ -50,7 +50,7 @@ const CurtainInsights = () => {
           {/* RSVP FORM */}
 {/* RSVP FORM */}
 <form
-  action={submitRSVP}
+  action={submitRSDV}
   className="flex flex-col sm:flex-row items-start gap-4 max-w-2xl"
 >
   <div className="relative w-full">
@@ -109,7 +109,7 @@ const CurtainInsights = () => {
       self-start 
     "
   >
-    RSVP Now
+    RSDV Now
   </button>
 </form>
           </div>

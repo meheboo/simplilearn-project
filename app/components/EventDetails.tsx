@@ -1,14 +1,14 @@
 import React from "react";
 import { Mail } from "lucide-react";
-import { submitRSVP } from "../actions/submit-rsvp";
+import { submitRSDV } from "../actions/submit-rsvp";
 
 const EventDetails = () => {
   return (
     <section className="relative w-full bg-white min-h-[693px] md:h-[693px]">
 
-      {/* RSVP INLINE */}
+      {/* RSDV INLINE */}
       <form
-        action={submitRSVP}
+        action={submitRSDV}
         className="
           max-w-[1240px]
           mx-auto
@@ -52,7 +52,7 @@ const EventDetails = () => {
       self-start
     "
   >
-    RSVP Now
+    RSDV Now
   </button>
 </div>
 

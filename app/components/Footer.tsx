@@ -2,7 +2,7 @@
 import React from "react"
 import Image from "next/image"
 import { Mail } from "lucide-react"
-import { submitRSVP } from "../actions/submit-rsvp"
+import { submitRSDV } from "../actions/submit-rsvp"
 
 const Footer = () => {
   return (
@@ -28,7 +28,7 @@ const Footer = () => {
             </p>
 
             <form
-              action={submitRSVP}
+              action={submitRSDV}
               className="flex flex-col gap-3 md:flex-row md:gap-4"
             >
               {/* Input */}
@@ -67,7 +67,7 @@ const Footer = () => {
                   text-[12px] md:text-sm
                 "
               >
-                RSVP Now
+                RSDV Now
               </button>
             </form>
           </div>
