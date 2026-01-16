@@ -2,11 +2,12 @@
 
 import { rsvpTable } from '@/lib/airtable'
 
-export async function submitRSVP(formData: FormData) {
+export async function submitRSVP(formData: FormData): Promise<void> {
   const email = formData.get('email') as string
 
   if (!email) {
-    return { success: false }
+    // You can throw an error, which Next.js will handle
+    throw new Error('Email is required')
   }
 
   await rsvpTable.create([
@@ -17,5 +18,5 @@ export async function submitRSVP(formData: FormData) {
     },
   ])
 
-  return { success: true }
+  // Do NOT return anything
 }
